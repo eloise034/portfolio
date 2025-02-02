@@ -1,0 +1,58 @@
+.home {
+  padding-top: 120px;
+}
+
+.intro-section {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.intro-section__left,
+.intro-section__right {
+  flex: 1;
+}
+
+.intro-section__text {
+  font-size: 76px;
+  line-height: 140%;
+  color: var(--special-text);
+  font-family: "Microsoft JhengHei", sans-serif;
+}
+
+.intro-section__paragraph {
+  padding: 20px 0;
+  line-height: 1.4;
+}
+
+.intro-section__paragraph h3 {
+  font-size: 18px; /* 調整大小 */
+  font-family: "Microsoft JhengHei", sans-serif;
+}
+
+.intro-section__image {
+  position: relative;
+  height: auto;
+  top: auto;
+  left: auto;
+  transform: translateX(50px);
+  z-index: -1;
+}
+
+.intro-section__image img {
+  max-width: 100%;
+  height: 700px;
+}
+
+.intro-section__image-half-round-shape {
+  position: absolute;
+  left: 60%;
+  bottom: 5%;
+  width: 350px;
+  height: 600px;
+  border-top-right-radius: 350px;
+  border-bottom-right-radius: 350px;
+  border: 2px solid var(--circle-border);
+  border-left: 0;
+  z-index: 10;
+}
