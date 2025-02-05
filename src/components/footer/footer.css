@@ -1,0 +1,123 @@
+/* Footer.css */
+.footer {
+  /*background-color: #f8f9fa;*/
+  color: var(--special-text);
+  padding: 2rem 0;
+  margin-top: auto; /* 確保頁尾貼底 */
+  border-top: 1px solid #e9ecef;
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+
+  max-width: 800px; /* 限制寬度，讓內容集中 */
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.footer__section {
+  text-align: center;
+}
+
+.footer__title {
+  /*color: #2d3436;*/
+  color: var(--special-text);
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer__icon {
+  margin-right: 8px;
+  font-size: 20px;
+  color: var(--special-text);
+}
+
+.footer__link {
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  /*color: #636e72;*/
+  color: var(--special-text);
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  transition: transform 0.3s ease;
+}
+
+.social-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--special-text);
+}
+
+.social-link[href*="github"]:hover .social-icon {
+  fill: #6c5ce7;
+}
+
+.social-link[href*="linkedin"]:hover .social-icon {
+  fill: #5ce768;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+}
+
+.social-link[href*="facebook"]:hover .social-icon {
+  fill: #1877f2;
+}
+.social-link[href*="instagram"]:hover .social-icon {
+  fill: #e4405f;
+}
+.social-link[href*="twitter"]:hover .social-icon {
+  fill: #1da1f2;
+}
+
+.footer__copyright {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e9ecef;
+  color: #636e72;
+  font-size: 0.875rem;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #2d3436;
+  /* color: white;*/
+  color: var(--special-text);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #cb462f;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .footer__content {
+    grid-template-columns: 1fr; /* 手機版改為單欄排列 */
+  }
+}
+.footer__section {
+  margin-bottom: 1.5rem;
+}

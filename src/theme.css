@@ -47,13 +47,15 @@ body {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
   font-weight: bold;
   margin-bottom: 0.5em;
   color: var(--text-color);
+  justify-content: center;
+  text-align: center;
+  font-family: openhuninn;
 }
 
 p {
@@ -159,4 +161,9 @@ a:hover {
   p {
     font-size: 0.9rem;
   }
+}
+/* 添加以下全局样式到你的全局CSS文件 */
+section {
+  scroll-margin-top: var(--header-height);
+  padding-top: calc(var(--header-height) + 20px);
 }

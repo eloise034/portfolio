@@ -1,58 +1,352 @@
+@font-face {
+  font-family: "openhuninn";
+  src: url("../assets/jf-openhuninn-1.1.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== 全局样式 ===== */
 .home {
   padding-top: 120px;
 }
 
+.section__title {
+  font-size: 62px;
+  font-weight: bold;
+  color: var(--special-text);
+  font-family: "openhuninn", sans-serif;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ===== 首屏区块 ===== */
 .intro-section {
   display: flex;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   position: relative;
 }
 
 .intro-section__left,
 .intro-section__right {
   flex: 1;
+  min-width: 0;
 }
 
 .intro-section__text {
   font-size: 76px;
   line-height: 140%;
   color: var(--special-text);
-  font-family: "Microsoft JhengHei", sans-serif;
+  font-family: "openhuninn", sans-serif;
+  margin-bottom: 30px;
 }
 
 .intro-section__paragraph {
-  padding: 20px 0;
-  line-height: 1.4;
+  padding: 10px 0;
+  line-height: 1.6;
 }
 
 .intro-section__paragraph h3 {
-  font-size: 18px; /* 調整大小 */
-  font-family: "Microsoft JhengHei", sans-serif;
+  font-size: 20px;
+  font-family: "openhuninn", sans-serif;
+  font-weight: 200;
+  margin-bottom: 5px;
+  margin-top: -8px;
 }
 
 .intro-section__image {
   position: relative;
-  height: auto;
-  top: auto;
-  left: auto;
   transform: translateX(50px);
   z-index: -1;
 }
 
 .intro-section__image img {
-  max-width: 100%;
-  height: 700px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 30px;
 }
 
-.intro-section__image-half-round-shape {
+/* ===== 经历区块 ===== */
+.experience {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* ===== 技能区块 ===== */
+.skill {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 60px 20px;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill__left,
+.skill__right {
+  flex: 1;
+  width: 100%;
+}
+
+.skill__wrapper {
+  background-color: var(--nav-bg);
+  margin-bottom: 40px;
+  border: 1px solid var(--text-color);
+  padding: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skill__box {
+  width: 100%;
+  height: 5px;
+  background-color: #cb462f;
+  position: relative;
+}
+
+.skill__progress-line {
   position: absolute;
-  left: 60%;
-  bottom: 5%;
-  width: 350px;
-  height: 600px;
-  border-top-right-radius: 350px;
-  border-bottom-right-radius: 350px;
-  border: 2px solid var(--circle-border);
-  border-left: 0;
-  z-index: 10;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--special-text);
+  width: 0;
+  transition: all 1s linear;
+}
+
+.skill__tag {
+  margin: 0 10px 25px;
+  display: inline-block;
+  color: var(--text-color);
+  position: relative;
+  z-index: 2;
+  font-family: "openhuninn", sans-serif;
+}
+
+.skill__percentage {
+  position: absolute;
+  right: 0;
+  top: -26px;
+}
+
+/* ===== 作品区块 ===== */
+.work {
+  width: 100%;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.work__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.work__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  aspect-ratio: 4/3;
+}
+
+.work__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.work__card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s ease;
+}
+
+.work__card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.work__card:hover::before {
+  opacity: 0.2;
+}
+
+.work__card-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: "openhuninn", sans-serif;
+  color: #fff;
+  font-size: 20px;
+  width: 90%;
+  opacity: 0;
+  transition: all 0.3s ease;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.work__card:hover .work__card-title {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* ===== 轮播组件 ===== */
+.slider-container {
+  width: 100%;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slick-list {
+  overflow: visible;
+  padding: 30px 0 !important;
+}
+
+.slick-track {
+  display: flex !important;
+  align-items: center;
+}
+
+.slide {
+  padding: 0 15px;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.slick-center .slide {
+  transform: scale(1);
+  z-index: 1;
+}
+
+.slide-image-container {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* ===== 响应式调整 ===== */
+@media (max-width: 1200px) {
+  .home {
+    padding-top: 100px;
+  }
+
+  .intro-section__text {
+    font-size: 62px;
+  }
+
+  .section__title {
+    font-size: 52px;
+  }
+
+  .slide-image-container {
+    max-width: 450px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 992px) {
+  .intro-section {
+    flex-direction: column;
+  }
+
+  .intro-section__image {
+    transform: none;
+    margin-top: 40px;
+  }
+
+  .intro-section__text {
+    font-size: 48px;
+  }
+
+  .section__title {
+    font-size: 42px;
+  }
+
+  .cards,
+  .work__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .slide-image-container {
+    max-width: 400px;
+    height: 200px;
+  }
+
+  .intro-section__image-half-round-shape {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-section__text {
+    font-size: 36px;
+  }
+
+  .section__title {
+    font-size: 32px;
+  }
+
+  .cards,
+  .work__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .slide-image-container {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .intro-section__text {
+    font-size: 28px;
+  }
+
+  .section__title {
+    font-size: 26px;
+  }
+
+  .work__card-title {
+    font-size: 16px;
+    padding: 10px;
+  }
 }

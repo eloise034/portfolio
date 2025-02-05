@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "openhuninn";
+  src: url("../assets/jf-openhuninn-1.1.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.card {
+  background: var(--nav-bg);
+  padding: 20px;
+  border-radius: 20px !important;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  border: 1px solid var(--text-color);
+  margin: 10px;
+  font-family: "openhuninn", sans-serif;
+}
+
+.card:hover {
+  border: 1px solid var(--special-text) !important;
+  transform: scale(1.05);
+}
+
+.card__title {
+  font-size: 32px;
+  color: var(--special-text);
+  font-family: "openhuninn", sans-serif;
+}
